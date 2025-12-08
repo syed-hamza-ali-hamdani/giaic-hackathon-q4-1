@@ -1,0 +1,169 @@
+/* src/css/roboguide.module.css */
+
+.chatButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--ifm-color-primary);
+  color: var(--ifm-font-color-base-inverse);
+  border: none;
+  border-radius: 50px;
+  padding: 15px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: background-color 0.3s ease, box-shadow 0.3s;
+  font-family: var(--ifm-font-family-base);
+}
+
+.chatButton:hover {
+  background-color: var(--ifm-color-primary-dark);
+  box-shadow: 0 0 15px var(--ifm-color-primary); /* Neon glow on hover */
+}
+
+.chatWindow {
+  position: fixed;
+  bottom: 90px; /* Above the button */
+  right: 20px;
+  width: 350px;
+  height: 500px;
+  background-color: var(--ifm-background-surface-color); /* Use surface color for chat window */
+  border: 1px solid var(--ifm-hr-background-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  overflow: hidden;
+  font-family: var(--ifm-font-family-base);
+  color: var(--ifm-text-color);
+  transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+html[data-theme='dark'] .chatWindow {
+  border: 1px solid var(--ifm-color-primary); /* Electric Cyan border in dark mode */
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4); /* Stronger neon glow */
+}
+
+.chatHeader {
+  background-color: var(--ifm-background-color); /* Darker header in dark mode */
+  color: var(--ifm-color-primary); /* Electric Cyan title */
+  padding: 10px 15px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--ifm-font-family-monospace);
+  border-bottom: 1px solid var(--ifm-hr-background-color);
+}
+
+html[data-theme='dark'] .chatHeader {
+  background-color: var(--ifm-background-color); /* Near-black background */
+  color: var(--ifm-color-primary); /* Electric Cyan */
+  border-bottom: 1px solid var(--ifm-color-primary); /* Neon border */
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  color: var(--ifm-color-primary); /* Electric Cyan close button */
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.closeButton:hover {
+  color: var(--ifm-color-primary-light);
+  text-shadow: 0 0 8px var(--ifm-color-primary); /* Neon glow on hover */
+}
+
+.chatBody {
+  flex-grow: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: var(--ifm-background-surface-color); /* Ensure body background is themed */
+  color: var(--ifm-text-color);
+}
+
+.welcomeMessage {
+  text-align: center;
+  color: var(--ifm-color-content-secondary);
+  font-style: italic;
+  margin-top: auto;
+}
+
+.chatMessage {
+  max-width: 80%;
+  padding: 8px 12px;
+  border-radius: 8px;
+  word-wrap: break-word;
+  font-family: var(--ifm-font-family-base);
+}
+
+.user {
+  align-self: flex-end;
+  background-color: var(--ifm-color-primary-lightest);
+  color: var(--ifm-font-color-base);
+  border-bottom-right-radius: 2px;
+}
+
+html[data-theme='dark'] .user {
+  background-color: rgba(0, 255, 255, 0.2); /* Electric Cyan tint for user message background */
+  color: var(--ifm-text-color);
+  border: 1px solid var(--ifm-color-primary-dark);
+}
+
+.ai {
+  align-self: flex-start;
+  background-color: var(--ifm-code-background-color);
+  color: var(--ifm-text-color);
+  border-bottom-left-radius: 2px;
+}
+
+html[data-theme='dark'] .ai {
+  border: 1px solid var(--ifm-hr-background-color);
+}
+
+.chatInputForm {
+  display: flex;
+  border-top: 1px solid var(--ifm-hr-background-color);
+}
+
+html[data-theme='dark'] .chatInputForm {
+  border-top: 1px solid var(--ifm-color-primary); /* Neon border for input form */
+}
+
+.chatInput {
+  flex-grow: 1;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  outline: none;
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-text-color);
+  font-family: var(--ifm-font-family-base);
+}
+
+.chatInput::placeholder {
+  color: var(--ifm-color-content-secondary);
+}
+
+.sendButton {
+  background-color: var(--ifm-color-primary);
+  color: var(--ifm-font-color-base-inverse);
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s;
+  font-family: var(--ifm-font-family-monospace); /* Terminal style button text */
+}
+
+.sendButton:hover {
+  background-color: var(--ifm-color-primary-dark);
+  box-shadow: 0 0 10px var(--ifm-color-primary); /* Neon glow on hover */
+}

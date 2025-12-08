@@ -1,0 +1,258 @@
+/**
+ * Any CSS you add here will be applied to all pages of your Docusaurus site.
+ *
+ * Cyberpunk/Tech Noir Theme for Humanoid Robotics Book
+ * Prioritizing Dark Mode with a clean Light Mode fallback.
+ */
+
+/* ==========================================================================
+   Global Variables & Typography
+   ========================================================================== */
+
+:root {
+  /* Fonts */
+  --ifm-font-family-base: 'Inter', sans-serif;
+  --ifm-font-family-monospace: 'Roboto Mono', monospace;
+
+  /* Light Mode Palette (Clean Fallback) */
+  --ifm-color-primary: #007bff; /* Standard Blue */
+  --ifm-color-primary-dark: #006ddb;
+  --ifm-color-primary-darker: #0066cd;
+  --ifm-color-primary-darkest: #0056b0;
+  --ifm-color-primary-light: #1a94ff;
+  --ifm-color-primary-lighter: #33a1ff;
+  --ifm-color-primary-lightest: #66baff;
+
+  --ifm-background-color: #ffffff; /* Clean White */
+  --ifm-text-color: #333333; /* Deep Navy/Black Text */
+  --ifm-background-surface-color: #f0f2f5; /* For cards, secondary backgrounds */
+  --ifm-hr-background-color: #e0e0e0; /* Light Separator */
+
+  --ifm-code-background-color: #f6f8fa; /* Light Grey for code blocks */
+  --ifm-color-content-secondary: #555555; /* Secondary text color */
+
+  /* Navbar */
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-navbar-link-color: var(--ifm-text-color);
+  --ifm-navbar-link-hover-color: var(--ifm-color-primary);
+
+  /* Sidebar */
+  --ifm-sidebar-background-color: #f8f9fa;
+  --ifm-sidebar-link-color: var(--ifm-text-color);
+  --ifm-sidebar-link-hover-color: var(--ifm-color-primary);
+  --ifm-sidebar-active-link-background: rgba(0, 123, 255, 0.1); /* Light primary tint */
+  --ifm-sidebar-active-link-color: var(--ifm-color-primary);
+}
+
+/* ==========================================================================
+   Dark Mode Palette (Cybernetic / Tech Noir - The Core Design)
+   ========================================================================== */
+
+html[data-theme='dark'] {
+  --ifm-color-primary: #00FFFF; /* Electric Cyan Accent */
+  --ifm-color-primary-dark: #00E5E5;
+  --ifm-color-primary-darker: #00CCCC;
+  --ifm-color-primary-darkest: #009999;
+  --ifm-color-primary-light: #33FFFF;
+  --ifm-color-primary-lighter: #66FFFF;
+  --ifm-color-primary-lightest: #99FFFF;
+
+  --ifm-background-color: #0D1117; /* Deep Charcoal / Near-Black */
+  --ifm-text-color: #F0F6F0; /* Crisp White / Light Gray */
+  --ifm-background-surface-color: #161B22; /* For cards, secondary backgrounds */
+  --ifm-hr-background-color: #2D333B; /* Dark Separator */
+
+  --ifm-code-background-color: #161B22; /* Hacker Terminal Code Block Background */
+  --ifm-color-content-secondary: #9AA4AF; /* Subtler gray for secondary text */
+
+  /* Navbar */
+  --ifm-navbar-background-color: #0D1117;
+  --ifm-navbar-link-color: var(--ifm-text-color);
+  --ifm-navbar-link-hover-color: var(--ifm-color-primary);
+
+  /* Sidebar */
+  --ifm-sidebar-background-color: #161B22;
+  --ifm-sidebar-link-color: var(--ifm-color-content-secondary);
+  --ifm-sidebar-link-hover-color: var(--ifm-color-primary);
+  --ifm-sidebar-active-link-background: rgba(0, 255, 255, 0.1); /* Electric Cyan tint */
+  --ifm-sidebar-active-link-color: var(--ifm-color-primary);
+}
+
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+
+body {
+  font-family: var(--ifm-font-family-base);
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ifm-font-family-base);
+  color: var(--ifm-text-color);
+  font-weight: 700;
+}
+
+h1 { border-bottom: 2px solid var(--ifm-color-primary); padding-bottom: 0.3em; margin-bottom: 1em; }
+h2 { border-bottom: 1px dashed var(--ifm-hr-background-color); padding-bottom: 0.3em; margin-bottom: 0.8em; }
+
+/* Links */
+a {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: var(--ifm-color-primary-light);
+  text-decoration: underline;
+}
+
+/* Buttons */
+.button {
+  background-color: var(--ifm-color-primary);
+  color: var(--ifm-font-color-base-inverse);
+  border: none;
+  border-radius: var(--ifm-button-border-radius);
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.button:hover {
+  background-color: var(--ifm-color-primary-dark);
+  box-shadow: 0 0 8px var(--ifm-color-primary); /* Subtle glow */
+}
+
+/* ==========================================================================
+   Navbar Styling
+   ========================================================================== */
+
+.navbar {
+  background-color: var(--ifm-navbar-background-color);
+  border-bottom: 1px solid var(--ifm-hr-background-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.navbar__brand {
+  font-family: var(--ifm-font-family-monospace);
+  font-weight: bold;
+  color: var(--ifm-navbar-link-color);
+  text-transform: uppercase;
+}
+
+.navbar__link {
+  color: var(--ifm-navbar-link-color);
+  font-weight: 500;
+  transition: color 0.2s, text-shadow 0.2s;
+}
+
+.navbar__link:hover {
+  color: var(--ifm-navbar-link-hover-color);
+  text-shadow: 0 0 5px var(--ifm-color-primary); /* Neon text effect on hover */
+}
+
+/* Color Mode Toggle */
+.toggleButton_node_modules-\@docusaurus-theme-classic-lib-theme-Navbar-ColorModeToggle-styles-module {
+  color: var(--ifm-navbar-link-color);
+  transition: color 0.2s;
+}
+.toggleButton_node_modules-\@docusaurus-theme-classic-lib-theme-Navbar-ColorModeToggle-styles-module:hover {
+  color: var(--ifm-color-primary);
+}
+
+
+/* ==========================================================================
+   Sidebar Styling
+   ========================================================================== */
+
+.theme-doc-sidebar-container {
+  background-color: var(--ifm-sidebar-background-color);
+  border-right: 1px solid var(--ifm-hr-background-color);
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.theme-doc-sidebar-item-link {
+  color: var(--ifm-sidebar-link-color);
+  padding: 10px 20px;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s;
+  border-left: 3px solid transparent; /* For active link highlight */
+}
+
+.theme-doc-sidebar-item-link:hover {
+  background-color: var(--ifm-sidebar-active-link-background);
+  color: var(--ifm-sidebar-link-hover-color);
+  border-left-color: var(--ifm-color-primary);
+}
+
+.theme-doc-sidebar-item-link.active {
+  background-color: var(--ifm-sidebar-active-link-background);
+  color: var(--ifm-sidebar-active-link-color);
+  font-weight: bold;
+  border-left-color: var(--ifm-color-primary);
+  box-shadow: inset 5px 0 10px -5px rgba(0, 255, 255, 0.3); /* Subtle inner glow */
+}
+
+/* Sidebar category titles */
+.menu__link.menu__link--sublist {
+  color: var(--ifm-text-color);
+  font-weight: 600;
+  border-bottom: 1px dashed var(--ifm-hr-background-color);
+  padding-bottom: 0.5em;
+  margin-bottom: 0.5em;
+  padding-top: 1em;
+}
+
+/* ==========================================================================
+   Code Block Styling (Hacker Terminal Look)
+   ========================================================================== */
+
+.codeBlockContainer_node_modules-\@docusaurus-theme-classic-lib-theme-CodeBlock-styles-module,
+pre {
+  background-color: var(--ifm-code-background-color);
+  border-radius: var(--ifm-code-border-radius);
+  padding: 15px;
+  border: 1px solid var(--ifm-hr-background-color); /* Subtle border */
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.1); /* Subtle neon glow */
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.95em;
+  line-height: 1.5;
+  transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+html[data-theme='dark'] .codeBlockContainer_node_modules-\@docusaurus-theme-classic-lib-theme-CodeBlock-styles-module,
+html[data-theme='dark'] pre {
+  border: 1px solid var(--ifm-color-primary); /* Electric Cyan border in dark mode */
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3); /* More prominent neon glow */
+}
+
+code {
+  font-family: var(--ifm-font-family-monospace);
+  background-color: rgba(var(--ifm-color-primary-rgb), 0.1); /* Subtle highlight for inline code */
+  color: var(--ifm-color-primary);
+  border-radius: 3px;
+  padding: 0.1em 0.3em;
+}
+
+/* ==========================================================================
+   Admonitions (Notes, Warnings, etc.)
+   ========================================================================== */
+
+.theme-admonition {
+  border-left: 5px solid var(--ifm-color-primary);
+  background-color: var(--ifm-background-surface-color);
+  color: var(--ifm-text-color);
+  border-radius: var(--ifm-border-radius);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.theme-admonition-title {
+  color: var(--ifm-color-primary);
+  font-weight: bold;
+}
+html[data-theme='dark'] .theme-admonition {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}

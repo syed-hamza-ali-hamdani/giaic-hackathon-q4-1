@@ -1,0 +1,44 @@
+introduction:
+  label: Introduction
+  permalink: /introduction
+  description: Introduction tag description
+
+bio:
+  label: Bio
+  permalink: /bio
+  description: Biography tag description
+
+programming:
+  label: Programming
+  permalink: /programming
+  description: Programming tag description
+
+ai:
+  label: AI
+  permalink: /ai
+  description: Artificial Intelligence tag description
+
+robotics:
+  label: Robotics
+  permalink: /robotics
+  description: Robotics tag description
+
+facebook:
+  label: Facebook
+  permalink: /facebook
+  description: Facebook tag description
+
+hello:
+  label: Hello
+  permalink: /hello
+  description: Hello tag description
+
+docusaurus:
+  label: Docusaurus
+  permalink: /docusaurus
+  description: Docusaurus tag description
+
+hola:
+  label: Hola
+  permalink: /hola
+  description: Hola tag description

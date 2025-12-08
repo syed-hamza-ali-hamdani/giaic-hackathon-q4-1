@@ -1,0 +1,12 @@
+syedhamzaali:
+  name: 'Syed Hamza Ali Hamdani'
+  title: 'AI & Full-Stack Developer | Humanoid Robotics Enthusiast'
+  url: '/blog/author/syedhamzaali'
+  image_url: 'https://github.com/syed-hamza-ali-hamdani.png'
+  description: 'AI & Full-Stack Developer focused on Robotics.'
+  page:
+    permalink: '/all-syed-hamza-ali-hamdani-articles'
+  socials:
+    x: 'ali_hamdan32460'
+    linkedin: 'syedhamza-alihamdani'
+    github: 'syed-hamza-ali-hamdani'
